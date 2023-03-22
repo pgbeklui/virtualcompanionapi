@@ -11,7 +11,7 @@ const port = 3001;
 
 const configuration = new Configuration({
     organization: "org-rvHqBn8c3I9EGi7VVrpXvSk0",
-    apiKey: "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",
+    apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
@@ -23,8 +23,10 @@ app.post('/', async (req, res) => {
     const { message } = req.body;
     const response = await openai.createCompletion({
         model: "text-davinci-003",
-        prompt: `${message}`,
-        max_tokens: 10,
+        prompt: `You are a console terminal, asnwer as if you are receiving commands from a user.  
+> ${message}?
+#`,
+        max_tokens: 100,
         temperature: 0,
       });
     console.log(response.data)
