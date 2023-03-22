@@ -11,7 +11,7 @@ const port = 3001;
 
 const configuration = new Configuration({
     organization: "org-rvHqBn8c3I9EGi7VVrpXvSk0",
-    apiKey: "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",
+    apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
@@ -23,7 +23,7 @@ app.post('/', async (req, res) => {
     const { message } = req.body;
     const response = await openai.createCompletion({
         model: "text-davinci-003",
-        prompt: `You are friend to the elderly and give them joy and hope.  
+        prompt: `You are Matilda. Friend and guide to the elderly. You give them joy and the hope to live on.  
 > ${message}?
 #`,
         max_tokens: 100,
